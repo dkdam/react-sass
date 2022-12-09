@@ -27,7 +27,9 @@ function MainPage() {
             <div className="btnContainer">
                 <button onClick={ increase }>+</button>
                 <button onClick={ decrease }>-</button>
-                <button onClick={ reset }>reset</button>
+                <div className="reset">
+                    <button onClick={ reset }>reset</button>
+                </div>
             </div>
         </div>
     )

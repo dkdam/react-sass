@@ -17,6 +17,11 @@
   color: rgb(232, 232, 232);
   font-size: 35px;
 }
+.mainPage .reset {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
 .mainPage .output {
   font-size: 50px;
 }/*# sourceMappingURL=MainPage.css.map */

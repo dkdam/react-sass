@@ -15,6 +15,12 @@
         @include buttonStyle($redColor, 35px);
     }
 
+    .reset {
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
     .output {
         font-size: 50px;       
     }
