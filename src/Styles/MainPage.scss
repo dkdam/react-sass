@@ -14,5 +14,11 @@
         margin-left: 5px;
         @include buttonStyle($redColor, 35px);
     }
+
+    .output {
+        font-size: 50px;       
+    }
 }
+
+
 

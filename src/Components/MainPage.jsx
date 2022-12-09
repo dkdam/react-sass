@@ -25,9 +25,9 @@ function MainPage() {
             <h2>Counter</h2>
             <span className="output">{ counter }</span>
             <div className="btnContainer">
-                <button className='btn' onClick={ increase }>+</button>
-                <button className='btn' onClick={ decrease }>-</button>
-                <button className='reset' onClick={ reset }>reset</button>
+                <button onClick={ increase }>+</button>
+                <button onClick={ decrease }>-</button>
+                <button onClick={ reset }>reset</button>
             </div>
         </div>
     )
