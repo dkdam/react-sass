@@ -5,4 +5,11 @@
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
+}
+.about section .profile {
+  display: flex;
+}
+.about section .profile .paragraph {
+  flex-direction: column;
+  margin: 0px 15px;
 }/*# sourceMappingURL=About.css.map */
