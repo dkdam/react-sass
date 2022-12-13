@@ -10,6 +10,8 @@
   display: flex;
 }
 .about section .profile .paragraph {
-  flex-direction: column;
-  margin: 0px 15px;
+  margin: 0 15px 0 0;
+}
+.about section .profile .two {
+  margin: 0 15px;
 }/*# sourceMappingURL=About.css.map */
