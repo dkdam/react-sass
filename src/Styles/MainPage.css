@@ -7,6 +7,12 @@
 .mainPage h1 {
   color: rgb(175, 6, 6);
 }
+.mainPage h1:hover {
+  -webkit-animation: bounce;
+          animation: bounce;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
 .mainPage button {
   margin-left: 5px;
   width: 200px;

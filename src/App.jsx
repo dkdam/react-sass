@@ -8,6 +8,7 @@ import Team from './Components/Team';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import './Styles/App.css'
+import 'animate.css'
 
 function App() {
   return (

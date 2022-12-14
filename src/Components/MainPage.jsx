@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import '../Styles/MainPage.css'
+import 'animate.css'
 
 function MainPage() {
     const [counter, setCounter] = useState(0)
@@ -21,7 +22,7 @@ function MainPage() {
 
     return (
         <div className='mainPage'>
-            <h1>Welcome Home</h1>
+            <h1>Welcome</h1>
             <h2>Counter</h2>
             <span className="output">{ counter }</span>
             <div className="btnContainer">
