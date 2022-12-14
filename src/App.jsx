@@ -3,11 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import MainPage from './Components/MainPage';
+import Games from './Components/Games';
 import Team from './Components/Team';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import './Styles/App.css'
-
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<MainPage/>}/>
+        <Route path='Games' element={<Games/>}/>
         <Route path='About' element={<About/>}/>
         <Route path='Team' element={<Team/>}/>
         <Route path='Contact' element={<Contact/>}/>
