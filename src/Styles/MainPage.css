@@ -8,8 +8,8 @@
   color: rgb(175, 6, 6);
 }
 .mainPage h1:hover {
-  -webkit-animation: bounce;
-          animation: bounce;
+  -webkit-animation: heartBeat;
+          animation: heartBeat;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
 }
