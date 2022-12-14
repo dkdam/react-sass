@@ -2,6 +2,7 @@
 $blackColor: rgb(26,26,26);;
 $whiteColor: rgb(232, 232, 232);
 $redColor: rgb(175,6,6);
+$redColorHover: rgba(175, 6, 6, 0.13);
 
 //fonts
 $titleFont: Arial, Helvetica, sans-serif;
@@ -10,7 +11,7 @@ $bodyFont: "Times New Roman", Times,serif;
 //button
 @mixin  buttonStyle($color,$fontSize) {
     width: 200px;
-    height: 40px;
+    height: 50px;
     background-color: $color;
     border: none;
     border-radius: 8px;

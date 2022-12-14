@@ -13,12 +13,37 @@
     button {
         margin-left: 5px;
         @include buttonStyle($redColor, 35px);
+        background-color: white;
+        color: $redColor;
+        border: 1px $redColor solid;
     }
+
+    button:hover {
+        background-color: $redColor;
+        color: $whiteColor;
+    }
+    
+    
+
+
 
     .reset {
         margin-top: 5px;
         display: flex;
         justify-content: center;
+
+        button {
+            background-color: $redColor;
+            color: $whiteColor;
+            width: 405px;
+        }
+
+        button:hover {
+            font-weight: 600;
+            background-color: $whiteColor;
+            color: $redColor;
+            border: none;
+        }
     }
 
     .output {
