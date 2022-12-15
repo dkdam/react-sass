@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import '../Styles/Fetch.css'
 
 function Fetch() {
     const [quote, setQuote] = useState("")
@@ -15,7 +16,7 @@ function Fetch() {
     }, [])
 
     return (
-        <div>
+        <div className='fetch'>
             <h1>Fetch Some Data</h1>
             <button onClick={fetchQuote}>Kanye West</button>
             <p> {quote} </p>

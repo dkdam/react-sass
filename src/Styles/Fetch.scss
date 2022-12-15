@@ -1,0 +1,16 @@
+@import '../Variables/Variables.scss';
+
+.fetch {
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+
+    button {
+        @include buttonStyle($redColor, 35px)
+    }
+
+    button:hover {
+        background-color: $whiteColor;
+        color: $redColor;
+    }
+}
