@@ -13,15 +13,21 @@ function Fetch() {
         })
     }
 
+    const handleKeyDown = event => {
+        if (event.key === 'Enter') {
+            event.preventDefault()
+            fetchData()
+        }
+    }
+
     return (
         <div className='fetch'>
-            <h1>Fetch Some Data</h1>
+            <h1>Enter your name</h1>
 
             <input 
                 placeholder='Type a name...' 
-                onChange={(event) => {
-                    setName(event.target.value);
-                }}
+                onChange={(event) => {setName(event.target.value)}}
+                onKeyDown={handleKeyDown}
             /> 
             <br />
             <button onClick={fetchData}>Predict Age</button>
