@@ -4,8 +4,12 @@
     margin: 0 auto;
     max-width: 900px;
     text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-items: center;
 
     button {
+        margin: 10px 0;
         @include buttonStyle($redColor, 35px)
     }
 

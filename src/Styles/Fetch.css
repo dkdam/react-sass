@@ -4,6 +4,7 @@
   text-align: center;
 }
 .fetch button {
+  margin: 10px 0;
   width: 200px;
   height: 50px;
   background-color: rgb(175, 6, 6);

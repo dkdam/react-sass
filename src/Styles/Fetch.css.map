@@ -1,1 +1,1 @@
-{"version":3,"sources":["Fetch.scss","Fetch.css","../Variables/Variables.scss"],"names":[],"mappings":"AAEA;EACI,cAAA;EACA,gBAAA;EACA,kBAAA;ACDJ;ADGI;EEKA,YAAA;EACA,YAAA;EACA,gCAXO;EAYP,YAAA;EACA,kBAAA;EACA,yBAfS;EAgBT,eFVoC;ACKxC;ADFI;EACI,oCEVK;EFWL,qBEVG;ADcX","file":"Fetch.css"}
+{"version":3,"sources":["Fetch.scss","Fetch.css","../Variables/Variables.scss"],"names":[],"mappings":"AAEA;EACI,cAAA;EACA,gBAAA;EACA,kBAAA;ACDJ;ADMI;EACI,cAAA;EECJ,YAAA;EACA,YAAA;EACA,gCAXO;EAYP,YAAA;EACA,kBAAA;EACA,yBAfS;EAgBT,eFNoC;ACExC;ADCI;EACI,oCEdK;EFeL,qBEdG;ADeX","file":"Fetch.css"}
