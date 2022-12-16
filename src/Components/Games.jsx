@@ -15,7 +15,7 @@ function Games() {
     const [gameHasStarted, setGameHasStarted] = useState(false)
     const [obstacleHeight, setObstacleHeight] = useState(200)
     const [obstacleLeft, setobstacleLeft] = useState(gameWidth - obstacleWidth)
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(-1)
 
     const bottomObstacleHeight = gameHeight - obstacleGap -obstacleHeight;
 
@@ -37,7 +37,7 @@ function Games() {
         if (gameHasStarted && obstacleLeft >= -obstacleWidth) {
             obstacleId = setInterval(() => {
                 setobstacleLeft((obstacleLeft) => obstacleLeft - 3)
-            }, 24)
+            }, 15)
 
             return () => {
                 clearInterval((obstacleId))
@@ -45,9 +45,19 @@ function Games() {
         } else {
             setobstacleLeft(gameWidth - obstacleWidth)
             setObstacleHeight(Math.floor(Math.random() * (gameHeight - obstacleGap)))
+            setScore((score) => score + 1)
         }
-        // setScore(score => score++)
-    })
+    }, [gameHasStarted, obstacleLeft])
+
+    useEffect(() => {
+        const hasCollidedWithTopObstacle = birdPosition >= 1&& birdPosition < obstacleHeight
+        const hasCollidedWithBottomObstacle = birdPosition <= 500 && birdPosition >= 500 - bottomObstacleHeight
+
+        if ( obstacleLeft >= 0 && obstacleLeft <= obstacleWidth && (hasCollidedWithTopObstacle || hasCollidedWithBottomObstacle)) {
+            setGameHasStarted(false)
+            setScore(-1)
+        }
+    }, [birdPosition, obstacleHeight, bottomObstacleHeight, obstacleLeft])
 
     const handleClick = () => { 
         let newBirdPosition = birdPosition - jumpHeight;
@@ -77,6 +87,7 @@ function Games() {
                     left={obstacleLeft}
                 />
             </GameBox>
+            <span> {score} </span>
         </Div>
     )
 }
@@ -97,6 +108,11 @@ const Div = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+    & span {
+        color: white;
+        font-size: 24px;
+        position: absolute;
+    }
 `;
 
 const GameBox = styled.div`
