@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const birdSize = 20;
+const birdSize = 30;
 const gameWidth = 500;
 const gameHeight = 500;
 const gravity = 6;
-const jumpHeight = 100;
+const jumpHeight = 80;
 
 function Games() {
 
-    const [birdPosition, setBirdPosition] = useState(250)
+    const [birdPosition, setBirdPosition] = useState(200)
+    const [gameHasStarted, setGameHasStarted] = useState(false)
 
     useEffect(() => {
         let timeId;
-        if (birdPosition < gameHeight - birdSize) {
+        if (gameHasStarted && birdPosition < gameHeight - birdSize) {
             timeId = setInterval(() => {
                 setBirdPosition((birdPosition) => birdPosition + gravity)
-            },24);
+            }, 24);
         }
 
         return () => {
             clearInterval(timeId)
         }
-    })
+    }, [birdPosition, gameHasStarted])
 
     const handleClick = () => {
         let newBirdPosition = birdPosition - jumpHeight;
-        setBirdPosition(newBirdPosition)
+        if (!gameHasStarted){
+            setGameHasStarted(true);
+        } else if (newBirdPosition < 0) {
+            newBirdPosition(0)
+        } else {
+            setBirdPosition(newBirdPosition)
+        }
     }
 
     return (
@@ -50,8 +57,9 @@ const Bird = styled.div`
 `;
 
 const Div = styled.div`
+    position: relative;
     display: flex;
-    width 100%;
+    width: 100%;
     justify-content: center;
 `;
 
