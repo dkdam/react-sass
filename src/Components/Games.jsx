@@ -6,11 +6,18 @@ const gameWidth = 500;
 const gameHeight = 500;
 const gravity = 6;
 const jumpHeight = 80;
+const obstacleWidth = 40;
+const obstacleGap = 200;
 
 function Games() {
 
     const [birdPosition, setBirdPosition] = useState(200)
     const [gameHasStarted, setGameHasStarted] = useState(false)
+    const [obstacleHeight, setObstacleHeight] = useState(200)
+    const [obstacleLeft, setobstacleLeft] = useState(gameWidth - obstacleWidth)
+    const [score, setScore] = useState(0)
+
+    const bottomObstacleHeight = gameHeight - obstacleGap -obstacleHeight;
 
     useEffect(() => {
         let timeId;
@@ -25,7 +32,24 @@ function Games() {
         }
     }, [birdPosition, gameHasStarted])
 
-    const handleClick = () => {
+    useEffect(() => {
+        let obstacleId;
+        if (gameHasStarted && obstacleLeft >= -obstacleWidth) {
+            obstacleId = setInterval(() => {
+                setobstacleLeft((obstacleLeft) => obstacleLeft - 3)
+            }, 24)
+
+            return () => {
+                clearInterval((obstacleId))
+            }
+        } else {
+            setobstacleLeft(gameWidth - obstacleWidth)
+            setObstacleHeight(Math.floor(Math.random() * (gameHeight - obstacleGap)))
+        }
+        // setScore(score => score++)
+    })
+
+    const handleClick = () => { 
         let newBirdPosition = birdPosition - jumpHeight;
         if (!gameHasStarted){
             setGameHasStarted(true);
@@ -38,8 +62,20 @@ function Games() {
 
     return (
         <Div onClick={handleClick}>
-            <GameBox height={gameHeight} width={gameWidth} >
+            <GameBox height={gameHeight} width={gameWidth}>
+                <Obstacle
+                    top={0}
+                    width={obstacleWidth}
+                    height={obstacleHeight}
+                    left={obstacleLeft}
+                />
                 <Bird size={birdSize} top={birdPosition}/>
+                <Obstacle
+                    top={gameHeight - (obstacleHeight + bottomObstacleHeight)}
+                    width={obstacleWidth}
+                    height={bottomObstacleHeight}
+                    left={obstacleLeft}
+                />
             </GameBox>
         </Div>
     )
@@ -67,4 +103,14 @@ const GameBox = styled.div`
     height: ${(props) => props.height}px;
     width: ${(props) => props.width}px;
     background-color: blue;
+    overflow: hidden;
+`
+
+const Obstacle = styled.div`
+    position: relative;
+    top: ${(props) => props.top}px;
+    background-color: green;
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+    left: ${(props) => props.left}px;
 `
