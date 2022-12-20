@@ -2,4 +2,8 @@
   margin: 0 auto;
   align-items: center;
   text-align: center;
+}
+
+li {
+  list-style-type: none;
 }/*# sourceMappingURL=Contact.css.map */
