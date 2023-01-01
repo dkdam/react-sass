@@ -5,7 +5,7 @@ import Contact from './Components/Contact';
 import MainPage from './Components/MainPage';
 import Fetch from './Components/Fetch';
 import Games from './Components/Games';
-import Team from './Components/Team';
+import Task from './Components/Task';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import './Styles/App.css'
@@ -21,7 +21,7 @@ function App() {
         <Route path='Fetch' element={<Fetch/>} />
         <Route path='Games' element={<Games/>}/>
         <Route path='About' element={<About/>}/>
-        <Route path='Team' element={<Team/>}/>
+        <Route path='Task' element={<Task/>}/>
         <Route path='Contact' element={<Contact/>}/>
       </Routes>
     </div>

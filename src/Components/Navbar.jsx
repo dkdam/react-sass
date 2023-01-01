@@ -10,7 +10,7 @@ function Navbar() {
                 <Link to="/Fetch" >Fetch</Link>
                 <Link to="/Games">Games</Link>
                 <Link to="/About">About</Link>
-                <Link to="/Team">Team</Link>
+                <Link to="/Task">Task</Link>
                 <Link to="/Contact">Contact</Link>
             </div>
         </nav>
